@@ -20,38 +20,29 @@ This script aims to showcase the sequence flow of synchronising data stores agai
 | 8    | Compare client and server state                              | Compare `COUNT(*)` from client table with `payload.total_items` |
 
 
-### Install
+### How to use
 the app is written in python:3.12.
 Here is what you need to do:
 
-`git clone`
+<ul>
+        <li>
+        clone this git repository <br/>
+        <code>git clone https://github.com/focus-international-services/api_sync_client.git</code>
+        </li>
+        <li>
+        install dependencies <br/>
+        <code>pip install -r requirements.txt</code>
+        </li>
+        <li>
+        Configure the config.yml file
+        </li>
+        <li>
+        Start the test database (docker required) <br/>
+        <code>docker compose up -d</code>
+        </li>
+</ul>
 
 
 
-
-
-
-# step 1:
-        api_reader.authenticate()
-
-# step2: load the resource schema
-        schema = api_reader.fetch_schema()
-
-# step3: build up the database schema if it does not exist (idempotent)
-        api_reader.db.schema = schema
-        api_reader.db.create_tables(schema)
-
-# step4: generally this could be done for multiple resources in parallel but for
-              the demonstration it only regards a single resource promotions
-              extract the latest state from the client side for the resource promotions
-        promotions = api_reader.db.schema.resources[0]
-        change_ts = api_reader.db.latest_state(promotions.name)
-        logger.info(f"client state timestamp: {change_ts}")
-
-# step 5: based on the change_ts decide whether a full load or a delta load is required and perform it.
-                generally it does not matter in which sequence the delta load is performed, as no item is in multiple
-                 endpoints
-
-# step 6: Check the client state vs the server state to see if both are in sync.
 
 
