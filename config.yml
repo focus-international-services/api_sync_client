@@ -1,0 +1,17 @@
+#--------------------------------------------------------------------------
+#  configuration template
+#-------------------------------------------------------------------------
+version: "1"
+service_host: xxx
+business_service: xxx
+user: xxx
+password:  xxx
+country: xxx
+lang: xxx
+# using docker example defined in docker-compose.yml
+db_type: postgres
+connection_string: "dbname=focus_api user=postgres password=postgres host=localhost port=5432"
+
+
+
+

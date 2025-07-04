@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  focus_api_db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: focus_api
+    ports:
+      - "5432:5432"
+
+
