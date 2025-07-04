@@ -23,26 +23,10 @@ This script aims to showcase the sequence flow of synchronising data stores agai
 ### How to use
 the app is written in python:3.12.
 Here is what you need to do:
-
-<ul>
-        <li>
-        clone this git repository <br/>
-        <code>git clone https://github.com/focus-international-services/api_sync_client.git</code>
-        </li>
-        <li>
-        install dependencies <br/>
-        <code>pip install -r requirements.txt</code>
-        </li>
-        <li>
-        Configure the config.yml file
-        </li>
-        <li>
-        Start the test database (docker required) <br/>
-        <code>docker compose up -d</code>
-        </li>
-</ul>
-
-
-
-
-
+|  |  |
+| ------- | ------  |
+| Clone Repository | ```git clone https://github.com/focus-international-services/api_sync_client.git```|
+| Install Dependencies | ```pip install -r requirements.txt``` |
+| Adjust Configuration | change settings to your credentials in config.yml |
+| start Client Database | ```docker compose up -d``` |
+| run system | ```python main.py``` |
